@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicApp.BusinessLogic\MusicApp.BusinessLogic.csproj" />
+    <ProjectReference Include="..\MusicApp.Entities\MusicApp.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="User Controls\EditSongUC - Copy.Designer.cs">
+      <DependentUpon>EditSongUC.Designer.cs</DependentUpon>
+    </Compile>
+    <Compile Update="User Controls\ListItems\ListItemUC4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ListItems\ListItemUC3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ListItems\ListItemUC2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="User Controls\EditSongUC - Copy.resx">
+      <DependentUpon>EditSongUC.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

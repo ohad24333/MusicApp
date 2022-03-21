@@ -1,0 +1,108 @@
+﻿
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace MusicApp.UI
+{
+    public partial class ListItemUC3 : UserControl
+    {
+      
+        public ListItemUC3()
+        {
+            InitializeComponent();
+          
+        }
+
+        public static Action<string> BannerClickEvent3;
+
+
+        #region Props
+
+        private string _title;
+
+        private string _info;
+
+        private Image _icon;
+
+        private Color _iconBackground;
+
+        private int _id;
+
+        private string _email;
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+
+        [Category("Custom Props")]
+        public Color IconBackground
+        {
+            get { return _iconBackground; }
+            set { _iconBackground = value; panel1.BackColor = value; }
+        }
+
+
+        [Category("Custom Props")]
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; lblTitle.Text = value; }
+        }
+        [Category("Custom Props")]
+        public string Info
+        {
+            get { return _info; }
+            set { _info = value; lblText.Text = value; }
+        }
+        [Category("Custom Props")]
+        public Image Icon
+        {
+            get { return _icon; }
+            set { _icon = value; pictureBox1.Image = value; }
+        }
+
+        #endregion
+
+
+        private void panel3_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Silver;
+
+        }
+       
+
+        private void panel3_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+            BannerClickEvent3(this.Email);
+
+        }
+
+        private void ListArtistsItemUC_MouseClick(object sender, MouseEventArgs e)
+        {
+            BannerClickEvent3(this.Email);
+        }
+
+        private void lblText_Click(object sender, EventArgs e)
+        {
+            BannerClickEvent3(this.Email);
+        }
+
+     
+    }
+}
